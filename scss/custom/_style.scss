@@ -1,0 +1,225 @@
+// Write your own style below
+
+// colors
+$red: #ed1c24;
+$w: #fff;
+$b: #000;
+$c: #444;
+
+// typo
+
+// fontface (place fonts folder in css only)
+@include font-face(Lato, '../css/fonts/Lato-Light', 300);
+@include font-face(Lato, '../css/fonts/Lato-LightItalic', 300, italic);
+@include font-face(Lato, '../css/fonts/Lato-Regular', normal);
+@include font-face(Lato, '../css/fonts/Lato-Italic', normal, italic);
+@include font-face(Lato, '../css/fonts/Lato-Bold', bold);
+@include font-face(Lato, '../css/fonts/Lato-BoldItalic', bold, italic);
+
+$lato: 'Lato';
+$arial: Arial, sans-serif;
+$serif: serif;
+
+// width
+$w1200: 1200px;
+$w1140: 1140px;
+$w960: 960px;
+$w640: 640px;
+$w320: 320px;
+
+// link
+a {
+	color: $red;
+	text-decoration: underline;
+}
+
+.cta {
+	text-decoration: none;
+	text-align: center;
+	display: inline-block;
+	padding: 10px 30px;
+	@include border-top-radius(6px);
+	@include border-bottom-radius(6px);
+	text-transform: uppercase;
+	font-weight: normal;
+	font-size: 14px;
+	&.cta-red {
+		border: 2px solid $red;
+		color: $red;
+	}
+	&.cta-white {
+		border: 2px solid $w;
+		color: $w;
+	}
+}
+
+body {
+	font-family: $lato;
+	font-size: 15px;
+	line-height: 1.4;
+	font-weight: normal;
+	background: $w;
+	color: $c;
+}
+
+.container {
+	@include outer-container;
+	max-width: 1000px;
+}
+
+// common
+.zero {margin:0;padding:0}
+$tablet: 768px;
+$mobile: 480px;
+
+// misc
+h1,h2,h3,h4,h5,h6 {
+	font-family: $lato;
+	@extend .zero;
+	margin-bottom: 15px;
+}
+h1 {
+	font-size: 80px;
+	@include max-width($tablet) {
+		font-size: 60px;
+	}
+	@include max-width($mobile) {
+		font-size: 35px;
+	}
+}
+h2 {
+	font-size: 38px;
+	@include max-width($tablet) {
+		font-size: 30px;
+	}
+	@include max-width($mobile) {
+		font-size: 26px;
+	}
+}
+h3 {
+	font-size: 25px;
+	@include max-width($tablet) {}
+	@include max-width($mobile) {}
+}
+h4 {
+	font-size: 22px;
+	@include max-width($tablet) {}
+	@include max-width($mobile) {}
+}
+
+// header
+.top {
+	background: $red;
+	@include clearfix;
+	padding: 30px 10px;
+	.logo {
+		float: left;
+	}
+	.cta {
+		margin-top: 15px;
+		float: right;
+	}
+	@include max-width($tablet) {
+		text-align: center;
+		.logo,.cta {
+			float: none;
+		}
+	};
+}
+
+.home-title {
+	padding: 80px 0;
+	h1,h2 {
+		line-height: normal;
+		@extend .zero;
+		text-align: center;
+		color: $w;
+	}
+	h2 {
+		margin-top: 10px;
+		font-weight: 300;
+	}
+	@include max-width($tablet) {
+		padding: 20px 0;
+	};
+}
+
+// section
+.section {
+	padding: 0 10px;
+	.span-3 {
+		@include max-width($tablet) {
+			width: 50% !important;
+			clear: none;
+			margin-right: 0 !important;
+			padding: 0 5px;
+		};
+		@include max-width($mobile) {
+			width: 100% !important;
+		};
+	}
+}
+.intro-title {
+	padding: 80px 40px;
+	text-align: center;
+	// font-weight: ;
+	font-weight: normal;
+	@include max-width($tablet) {
+		padding: 40px 10px;
+	}
+}
+
+.app-title {
+	@include clearfix;
+	margin-top: 20px;
+	margin-bottom: 10px;
+	font-size: 22px;
+	font-weight: 300;
+	letter-spacing: -1px;
+	span {
+		margin-top: 5px;
+		display: block;
+	}
+	img {
+		float: left;
+		margin-right: 10px;
+	}
+	@include max-width($tablet) {
+		img {display: none}
+	};
+	@include max-width($mobile) {};
+}
+
+.app-title,
+.app-description {
+	@include max-width($tablet) {
+		text-align: center;
+	}
+}
+
+.bottom-cta {
+	text-align: center;
+	padding: 80px 10px;
+	h2,h4 {
+		@extend .zero;
+	}
+	h4 {
+		margin-top: 10px;
+		font-weight: normal;
+	}
+	.cta {
+		margin-top: 30px;
+	}
+	@include max-width($tablet) {
+		padding: 20px 10px;
+	}
+}
+
+// footer
+.bottom {
+	padding: 40px 10px;
+}
+.copyright {
+	text-align: center;
+	font-size: 12px;
+}
