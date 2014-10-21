@@ -197,6 +197,53 @@ h4 {
 	}
 }
 
+// quote
+.testimonials {
+	margin-top: 75px;
+	@include max-width($tablet) {
+		margin: 10px;
+	};
+}
+.quote {
+	position: relative;
+	padding: 30px;
+	font-family: Georgia, serif;
+	font-size: 22px;
+	color: $w;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	background: $red;
+	@include max-width($tablet) {
+		font-size: 18px;
+		padding: 15px;
+	};
+	&:after {
+		top: 100%;
+		left: 50px;
+		border: solid transparent;
+		content: " ";
+		height: 0;
+		width: 0;
+		position: absolute;
+		pointer-events: none;
+		border-color: rgba(255,255,255,0);
+		border-top-color: $red;
+		border-width: 30px;
+	}
+}
+.author {
+	margin: 40px 0 0 40px;
+	font-size: 22px;
+	a {
+		color: #2290bf;
+		text-decoration: none;
+	}
+	@include max-width($tablet) {
+		font-size: 18px;
+	};
+}
+
 .bottom-cta {
 	text-align: center;
 	padding: 80px 10px;
