@@ -46,10 +46,18 @@ a {
 	&.cta-red {
 		border: 2px solid $red;
 		color: $red;
+		&:hover {
+			background: $red;
+			color: $w;
+		}
 	}
 	&.cta-white {
 		border: 2px solid $w;
 		color: $w;
+		&:hover {
+			background: $w;
+			color: $red;
+		}
 	}
 }
 
@@ -69,6 +77,7 @@ body {
 
 // common
 .zero {margin:0;padding:0}
+.zero-list {margin:0;padding:0;list-style:none}
 $tablet: 768px;
 $mobile: 480px;
 
@@ -80,6 +89,7 @@ h1,h2,h3,h4,h5,h6 {
 }
 h1 {
 	font-size: 80px;
+	font-weight: 300;
 	@include max-width($tablet) {
 		font-size: 60px;
 	}
@@ -88,7 +98,8 @@ h1 {
 	}
 }
 h2 {
-	font-size: 38px;
+	font-size: 40px;;
+	font-weight: 300;
 	@include max-width($tablet) {
 		font-size: 30px;
 	}
@@ -97,9 +108,14 @@ h2 {
 	}
 }
 h3 {
-	font-size: 25px;
-	@include max-width($tablet) {}
-	@include max-width($mobile) {}
+	font-size: 20px;
+	font-weight: normal;
+	@include max-width($tablet) {
+		font-size: 18px;
+	}
+	@include max-width($mobile) {
+		font-size: 16px;
+	}
 }
 h4 {
 	font-size: 22px;
@@ -146,7 +162,15 @@ h4 {
 
 // section
 .section {
-	padding: 0 10px;
+	padding: 100px 10px;
+	border-bottom: 1px solid lighten($c, 50%);
+	text-align: center;
+	@include max-width($tablet) {
+		padding: 50px 10px;
+	};
+	.cta-red {
+		margin-top: 30px;
+	}
 	.span-3 {
 		@include max-width($tablet) {
 			width: 50% !important;
@@ -158,43 +182,107 @@ h4 {
 			width: 100% !important;
 		};
 	}
-}
-.intro-title {
-	padding: 80px 40px;
-	text-align: center;
-	// font-weight: ;
-	font-weight: normal;
-	@include max-width($tablet) {
-		padding: 40px 10px;
+	.intro-title {
+		padding-bottom: 50px;
+		.fa,h2,h3 {
+			text-align: center;
+			@extend .zero;
+			display: block;
+		}
+		.fa {
+			font-size: 100px;
+			color: $red;
+		}
+	}
+	ul.dm {
+		display: table;
+		table-layout: fixed;
+		@extend .zero-list;
+		width: 100%;
+		li {
+			display: table-cell;
+			font-weight: bold;
+			img {
+				margin-bottom: 15px;
+			}
+		}
+		@include max-width($tablet) {
+			// display: block;
+			li {
+				// display: block;
+				font-size: 13px;
+				img {
+					width: 85px;
+					margin-bottom: 10px;
+				}
+			}
+		};
+		@include max-width($mobile) {
+			display: block;
+			li {
+				// display: inline-block;
+				float: left;
+				width: 50%;
+				margin-bottom: 15px;
+				// font-size: 10px;
+				padding: 0 10px;
+				&:last-child {
+					float: none;
+					width: 100%;
+					display: block;
+				}
+
+				img {
+					// width: 75px;
+				}
+			}
+		};
 	}
 }
+// .intro-title {
+// 	padding: 80px 40px;
+// 	text-align: center;
+// 	// font-weight: ;
+// 	font-weight: 300;
+// 	small {
+// 		display: block;
+// 		font-weight: normal;
+// 		font-size: 20px !important;
+// 	}
+// 	@include max-width($tablet) {
+// 		padding: 40px 10px;
+// 	}
+// }
 
 .app-title {
 	@include clearfix;
 	margin-top: 20px;
-	margin-bottom: 10px;
+	margin-bottom: 30px;
 	font-size: 22px;
 	font-weight: 300;
 	letter-spacing: -1px;
 	span {
 		margin-top: 5px;
 		display: block;
+		text-align: left;
 	}
 	img {
 		float: left;
 		margin-right: 10px;
 	}
 	@include max-width($tablet) {
-		img {display: none}
+		margin-top: 10px;
+		img {
+			float: none;
+			display: block;
+			margin: 0 auto
+		}
+		span {
+			text-align: center;
+			// margin-bottom: 30px;
+		}
 	};
 	@include max-width($mobile) {};
-}
-
-.app-title,
-.app-description {
-	@include max-width($tablet) {
-		text-align: center;
-	}
 }
 
 // quote
@@ -242,6 +330,9 @@ h4 {
 	@include max-width($tablet) {
 		font-size: 18px;
 	};
+	@include max-width($tablet) {
+		margin-left: 0;
+	};
 }
 
 .bottom-cta {
@@ -255,7 +346,7 @@ h4 {
 		font-weight: normal;
 	}
 	.cta {
-		margin-top: 30px;
+		// margin-top: 30px;
 	}
 	@include max-width($tablet) {
 		padding: 20px 10px;
