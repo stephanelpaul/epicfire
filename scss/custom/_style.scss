@@ -294,9 +294,9 @@ h4 {
 }
 .quote {
 	position: relative;
-	padding: 30px;
+	padding: 20px;
 	font-family: Georgia, serif;
-	font-size: 22px;
+	font-size: 16px;
 	color: $w;
 	-webkit-border-radius: 10px;
 	-moz-border-radius: 10px;
@@ -317,12 +317,12 @@ h4 {
 		pointer-events: none;
 		border-color: rgba(255,255,255,0);
 		border-top-color: $red;
-		border-width: 30px;
+		border-width: 15px;
 	}
 }
 .author {
-	margin: 40px 0 0 40px;
-	font-size: 22px;
+	margin: 20px 0 0 40px;
+	font-size: 18px;
 	a {
 		color: #2290bf;
 		text-decoration: none;
